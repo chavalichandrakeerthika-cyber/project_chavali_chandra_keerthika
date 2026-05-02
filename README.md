@@ -5,36 +5,45 @@
 **Course:** Image and Video Processing with Deep Learning
 
 ---
-## How to Run
+## Project Overview
+This project implements a U-Net Convolutional Neural Network to detect and delineate landslide boundaries from multi-spectral satellite imagery. The model takes 128x128 pixel patches with 14 spectral bands as input and produces binary segmentation masks classifying each pixel as landslide or background.
 
-### Install Dependencies
+---
+## Setup
+
+### Clone the repository
+```bash
+git clone https://github.com/chavalichandrakeerthika-cyber/project_chavali_chandra_keerthika.git
+cd project_chavali_chandra_keerthika
+```
+
+### Install dependencies
 ```bash
 pip install torch h5py numpy matplotlib
 ```
 
-### Run Inference
-```python
+---
+## Testing Imports
+
+```bash
+python -c "from interface import TheModel, the_trainer, the_predictor, TheDataset, the_dataloader, the_batch_size, total_epochs; print('All imports OK')"
+```
+
+---
+## Running Inference on Sample Data
+Sample data is included in the data/ folder (10 images):
+
+```bash
+python -c "
 from interface import the_predictor
 import os
-
 files = [os.path.join('data', f) for f in os.listdir('data')]
-predictions = the_predictor(files)
-# Prediction PNG files will be saved in the project folder
+preds = the_predictor(files)
+print('Predictions:', len(preds))
+print('Mask shape:', preds[0].shape)
+"
 ```
-
-### Run Training
-```python
-from interface import TheModel, the_trainer, the_dataloader
-import torch
-
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = TheModel().to(device)
-train_loader, valid_loader = the_dataloader('path/to/TrainData/img', 'path/to/TrainData/mask')
-the_trainer(model, train_loader, valid_loader, device)
-```
-
-## Project Overview
-This project implements a U-Net Convolutional Neural Network to detect and delineate landslide boundaries from multi-spectral satellite imagery. The model takes 128x128 pixel patches with 14 spectral bands as input and produces binary segmentation masks classifying each pixel as landslide or background.
+Prediction PNG files will be saved in the project folder.
 
 ---
 
@@ -64,3 +73,6 @@ This project implements a U-Net Convolutional Neural Network to detect and delin
 - **Epochs:** 20
 
 ---
+
+---
+
