@@ -30,7 +30,7 @@ python -m pip install torch h5py numpy matplotlib
 ## Testing Imports
 
 ```bash
-python -c "from interface import TheModel, the_trainer, the_predictor, TheDataset, the_dataloader, the_batch_size, total_epochs; print('All imports OK')"
+python -c "from interface import the_predictor; import os; files = [os.path.join('data', f) for f in os.listdir('data')]; preds = the_predictor(files); print('Predictions:', len(preds)); print('Mask shape:', preds[0].shape)"
 ```
 
 ---
