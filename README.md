@@ -23,7 +23,7 @@ pip install torch h5py numpy matplotlib
 ```
 or
 ```bash
-python -m pip install torch h5py numpy
+python -m pip install torch h5py numpy matplotlib
 ```
 
 ---
