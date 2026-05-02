@@ -21,6 +21,10 @@ cd project_chavali_chandra_keerthika
 ```bash
 pip install torch h5py numpy matplotlib
 ```
+or
+```bash
+python -m pip install torch h5py numpy
+```
 
 ---
 ## Testing Imports
