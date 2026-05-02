@@ -64,17 +64,3 @@ This project implements a U-Net Convolutional Neural Network to detect and delin
 - **Epochs:** 20
 
 ---
-
-## Project Structure
-project_keerthika_chavali/
-├── checkpoints/
-│   └── final_weights.pth    # trained model weights
-├── data/                    # 10 sample .h5 image patches
-├── config.py                # hyperparameters and image settings
-├── dataset.py               # LandslideDataset class and dataloader
-├── model.py                 # UNet and DoubleConv architecture
-├── train.py                 # training loop and loss functions
-├── predict.py               # inference function
-└── interface.py             # standardized imports for grading
-
----
